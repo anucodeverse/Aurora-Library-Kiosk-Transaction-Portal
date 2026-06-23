@@ -1,0 +1,362 @@
+/* ================= BASE RESET ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f3f6fb;
+    padding: 24px;
+    color: #1f2937;
+}
+
+/* ================= APP CONTAINER ================= */
+
+#app-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ================= HEADER ================= */
+
+#app-header {
+    background: #ffffff;
+    padding: 18px 22px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+#app-header h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+    flex: 1;
+}
+
+/* ================= STATUS BADGES ================= */
+
+#offline-indicator {
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 12px;
+    background: #22c55e;
+    color: white;
+}
+
+#last-sync-time {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* ================= BUTTON ================= */
+
+#sync-all-transactions-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+#sync-all-transactions-btn:hover {
+    background: #1d4ed8;
+}
+
+#sync-all-transactions-btn:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* ================= FORM ================= */
+
+#transaction-entry-form {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 14px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+#transaction-entry-form input {
+    flex: 1;
+    min-width: 220px;
+    padding: 12px 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+#transaction-entry-form input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+#submit-transaction-btn {
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+#submit-transaction-btn:hover {
+    background: #059669;
+}
+
+/* ================= MESSAGES ================= */
+
+#validation-errors {
+    color: #dc2626;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+#status-notifications {
+    color: #15803d;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+#status-notifications{
+    display:none;
+    padding:12px 16px;
+    border-radius:8px;
+    margin:15px 0;
+    font-weight:bold;
+}
+
+.success-alert{
+    display:block !important;
+    background:#dcfce7;
+    color:#166534;
+    border:1px solid #86efac;
+}
+
+.error-alert{
+    display:block !important;
+    background:#fee2e2;
+    color:#991b1b;
+    border:1px solid #fca5a5;
+}
+
+.info-alert{
+    display:block !important;
+    background:#dbeafe;
+    color:#1e40af;
+    border:1px solid #93c5fd;
+}
+
+#patron-loading {
+    color: #2563eb;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+/* ================= SUGGESTIONS ================= */
+
+#book-suggestions-dropdown {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    margin-top: 6px;
+    max-height: 220px;
+    overflow-y: auto;
+    display: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.suggestion-item {
+    padding: 10px 12px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.suggestion-item:hover {
+    background: #f3f4f6;
+}
+
+/* ================= TABLE CONTAINER ================= */
+
+#transaction-log-display {
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+    margin-top: 10px;
+    max-height: 480px;
+    overflow-y: auto;
+}
+
+/* ================= TABLE ================= */
+
+#transaction-records-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    table-layout: fixed;
+}
+
+#transaction-records-table thead th {
+    position: sticky;
+    top: 0;
+    background: #111827;
+    color: white;
+    text-align: left;
+    padding: 14px;
+    font-size: 13px;
+    z-index: 2;
+}
+
+#transaction-records-table td {
+    padding: 14px;
+    border-bottom: 1px solid #f1f5f9;
+    word-break: break-word;
+}
+
+#transaction-records-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+
+/* ================= ACTION CELL ================= */
+
+.action-cell{
+    display:flex;
+    gap:8px;
+    align-items:center;
+    justify-content:flex-start;
+    flex-wrap:nowrap;
+    white-space:nowrap;
+}
+
+.action-cell button{
+    flex-shrink:0;
+}
+
+/* ================= BUTTONS ================= */
+
+.remove-record-btn,
+.mark-returned-btn {
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.remove-record-btn {
+    background: #ef4444;
+    color: white;
+}
+
+.remove-record-btn:hover {
+    background: #dc2626;
+}
+
+.mark-returned-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.mark-returned-btn:hover {
+    background: #1d4ed8;
+}
+
+.mark-returned-btn:disabled {
+    background: #cbd5e1;
+    cursor: not-allowed;
+}
+
+/* ================= STATUS BADGES ================= */
+
+.pending,
+.synced,
+.failed,
+.return-sync {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.pending {
+    background: #fef9c3;
+    color: #92400e;
+}
+
+.synced {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.failed {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.return-sync {
+    background: #dbeafe;
+    color: #1e3a8a;
+}
+
+/* ================= SUMMARY ================= */
+
+#summary-footer {
+    background: #f8fafc;
+    font-weight: 600;
+}
+
+#summary-footer td {
+    padding: 14px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 12px;
+    }
+
+    #app-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #transaction-entry-form {
+        flex-direction: column;
+    }
+
+    #transaction-entry-form input,
+    #submit-transaction-btn {
+        width: 100%;
+    }
+
+    #transaction-records-table {
+        font-size: 13px;
+    }
+}
