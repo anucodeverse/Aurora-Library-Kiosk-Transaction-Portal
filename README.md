@@ -104,7 +104,7 @@ project/
 1. Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone <https://github.com/anucodeverse/Aurora-Library-Kiosk-Transaction-Portal>
 ```
 
 2. Open the project folder
